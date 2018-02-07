@@ -12,9 +12,9 @@ class DrushLauncher < AbstractPhpPhar
     "drush.phar"
   end
 
-  def phar_bin
-    "drush"
-  end
+ def install
+    bin.install "drush.phar" => "drush"
+ end
 
   test do
     system "#{bin}/drush", "--drush-launcher-version"
